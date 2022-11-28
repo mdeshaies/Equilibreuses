@@ -2,6 +2,9 @@
 #define EQUILIBREUSE_H
 
 #include <QMainWindow>
+#include "mcculdaq.h"
+#include "capot.h"
+#include "moteur.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Equilibreuse; }
@@ -17,5 +20,8 @@ public:
 
 private:
     Ui::Equilibreuse *ui;
+    MccUldaq laCarte;
+    Capot *leCapot;
+    Moteur *leMoteur;
 };
 #endif // EQUILIBREUSE_H

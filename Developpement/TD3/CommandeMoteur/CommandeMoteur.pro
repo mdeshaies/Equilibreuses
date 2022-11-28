@@ -12,15 +12,20 @@ SOURCES += \
     capot.cpp \
     main.cpp \
     equilibreuse.cpp \
+    mcculdaq.cpp \
     moteur.cpp
 
 HEADERS += \
     capot.h \
     equilibreuse.h \
+    mcculdaq.h \
     moteur.h
 
 FORMS += \
     equilibreuse.ui
+
+LIBS += /usr/local/lib/libuldaq.a
+LIBS += -lusb-1.0
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
