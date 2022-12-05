@@ -16,11 +16,14 @@ public:
     void onTimerCapot_timeout();
     bool getEtatCapot() const;
 
+signals:
+    void EtatCapotChange(const bool _etat);
+
 private:
     bool etatCapot;
     int numDio;
     QTimer timerCapot;
-    MccUldaq laCarte;
+    MccUldaq &laCarte;
 };
 
 #endif // CAPOT_H

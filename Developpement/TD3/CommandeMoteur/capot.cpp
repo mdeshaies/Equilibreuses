@@ -16,5 +16,10 @@ Capot::Capot(MccUldaq &_laCarte, const int _numDio,QObject *parent):
 
 void Capot::onTimerCapot_timeout()
 {
-
+    bool etatCourant;
+    laCarte.ulDBitIn(numDio, etatCourant);
+    if(etatCapot != etatCourant){
+        emit EtatCapotChange(etatCourant);
+        etatCapot = etatCourant;
+    }
 }
